@@ -1,0 +1,32 @@
+.menuItemsList { padding: 0 20px; }
+
+.menuItemsList li:last-child { 
+  border-top: 1px solid var(--greyEC);
+}
+
+.menuItem {
+  padding: 12px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+} 
+
+.menuItem svg { margin-right: 7px; }
+
+.shared, .save, .comments { display: none; }
+
+@media (min-width: 1024px) {
+  .menuItemsList { min-width: 157px; }
+  
+  .menuItemsList li:last-child { border-top: none; }
+
+  .menuItemsList li:not(:last-child) { border-bottom: 1px solid var(--greyEC); }
+
+  .shared, .save, .comments { display: flex; }
+}
+
+@media (min-width: 1540px) {
+  .menuItemsList { padding: 12px 20px; } 
+
+  .menuItem { padding: 5px 0; }
+}

@@ -1,0 +1,41 @@
+.mobButtonsLine {
+  position: absolute;
+  display: flex;
+  bottom: 30px;
+  right: 0;
+  width: 100%;
+}
+
+.mobButtons {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.mobButtons:not(.comments) {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--greyC4);
+}
+
+.mobButtons:not(.comments) > svg path { fill: var(--white); }
+
+.comments {
+  bottom: -15px; 
+  right: calc(50% - 20px); 
+}
+.comments svg { margin-right: 5px; }
+
+.shared { right: 55px; }
+
+.save { right: 20px; }
+
+@media (min-width: 1024px) {
+  .mobButtonsLine {
+    display: none;
+  }
+}
+

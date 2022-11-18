@@ -1,0 +1,24 @@
+.form {
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.input {
+  padding: 10px 12px;
+  border-radius: 3px 3px 0 0;
+  border-color: var(--greyD9);
+  width: 100%;
+  height:90px;
+  color: var(--orange);
+  resize: none;
+}
+
+textarea[aria-invalid] {
+  border-color: red;
+  outline: red;
+}
+
+.error {
+  padding: 0 10px 7px;
+  color: red;
+}

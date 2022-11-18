@@ -1,0 +1,34 @@
+.cardslist {
+  background-color: transparent;
+}
+
+.cardslist > *:not(:last-child) {
+  margin-bottom: 20px;
+} 
+
+.loadButton {
+  display: block;
+  margin: 10px auto 0;
+  padding: 10px 15px;
+  border: 1px solid var(--orange);
+  border-radius: 5px;
+  font-size: 18px;
+  color: var(--orange);
+  transition: color 150ms ease-in, background-color 150ms ease-in;
+}
+
+.loadButton:hover {
+  background-color: var(--orange);
+  color: white;
+}
+
+@media all and (min-width: 1024px) {
+  .cardslist > *:not(:last-child) {
+    margin-bottom: 0;
+  } 
+
+  .cardslist {
+    border-radius: 7px;
+    padding: 20px 0;
+  }
+}

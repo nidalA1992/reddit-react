@@ -1,0 +1,19 @@
+.postinfo { padding: 0 20px; }
+
+@media (min-width: 1024px) {
+  .postinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin-right: auto;
+  }
+
+  .title {
+    margin-bottom: 10px;
+    order: -1;
+    max-width: 70%;
+    -webkit-line-clamp: 1;
+    -moz-line-clamp: 1;
+  }
+}

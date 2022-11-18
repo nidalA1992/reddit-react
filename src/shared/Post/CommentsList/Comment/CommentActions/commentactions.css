@@ -1,0 +1,22 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 27px;
+}
+
+.button span,
+.button svg path {
+  line-height: 1.5em;
+  transition: fill 150ms ease-in,
+    color 150ms ease-in;
+}
+
+.button:hover span,
+.button:hover svg path {
+  color: var(--orange);
+  fill: var(--orange);
+}
+
+.button svg {
+  margin-right: 6px;
+}

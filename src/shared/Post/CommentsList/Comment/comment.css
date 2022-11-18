@@ -1,0 +1,38 @@
+.commentWrapper {
+  position: relative;
+  padding-left: 30px;
+}
+
+.commentWrapper > *:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.sideLine {
+  position: absolute;
+  width: 3px;
+  height: calc(100% - 50px);
+  top: 50px;
+  left: 0;
+  background-color: var(--greyD9);
+}
+
+.karmaCounter {
+  position: absolute;
+  left: -5px;
+  top: 0;
+}
+
+.karmaCounter span {
+  padding: 0;
+}
+
+.comment {
+  margin-bottom: 11px;
+}
+
+.comment [class*='metaData'] {
+  align-items: center;
+  margin-bottom: 11px;
+  margin-left: -7px;
+}
+

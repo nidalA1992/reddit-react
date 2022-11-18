@@ -1,0 +1,37 @@
+.metaData {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.altOrder {
+  order: 1 !important;
+}
+
+.metaData > *:not(:last-child) { margin-right: 7px; }
+
+.published { display: none; }
+
+.subredditLabel {
+  padding: 4px 7px;
+  font-size: 14px;
+  color: var(--black);
+  background-color: var(--greyD9);
+}
+
+@media (min-width: 1024px) {
+  .metaData {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .publishedAt {
+    order: -1;
+  }
+
+  .published {
+    display: inline-block;
+    margin-right: 4px;
+    color: inherit;
+  }
+}

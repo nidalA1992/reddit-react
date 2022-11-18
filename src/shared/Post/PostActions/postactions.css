@@ -1,0 +1,27 @@
+.bar {
+  position: relative;
+  border-top: 1px solid var(--greyD9);
+}
+
+.voted {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 8px);
+  color: var(--grey99);
+}
+
+.voted * {
+  vertical-align: middle;
+}
+
+.bar ul {
+  display: inline-flex;
+}
+
+.bar ul li {
+  border: none !important;
+}
+
+.bar ul li {
+  margin-right: 28px;
+}

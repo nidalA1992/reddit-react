@@ -1,0 +1,25 @@
+.control {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -4px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex: 1 1 100%;
+  padding: 0 0 0 19px;
+  background-color: var(--greyE5);
+}
+
+.list li {
+  margin-right: 26px;
+}
+
+.button {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 17px 50px;
+  color: var(--white);
+  background-color: var(--orange);
+}
