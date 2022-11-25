@@ -12,9 +12,9 @@ interface IUserBlockProps {
 
 export function UserBlock(props: Partial<IUserBlockProps>) {
   const { avatarSrc, userName, loading} = props;
-  
+
   return (
-    <a href={`https://www.reddit.com/api/v1/authorize?client_id=wwwocbaKhzrEWKGLTAG0rw&response_type=code&state=random_string&redirect_uri=http://localhost:4000/auth&duration=permanent&scope=identity read submit`}
+    <a href={`https://www.reddit.com/api/v1/authorize?client_id=${process.env.CLIENT_ID}&response_type=code&state=random_string&redirect_uri=${process.env.REDIRECT}/auth&duration=permanent&scope=identity read submit`}
       className={styles.userBox} 
     >
       <div className={styles.avatarBox}>

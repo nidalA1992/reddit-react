@@ -44,17 +44,19 @@ export const saveTokenAsync = ():tokenRequestAsync => (dispatch) => {
 
   if(!code) return;
 
-  console.log(process.env.CLIENT_SECRET)
+  console.log(process.env.CLIENT_ID, process.env.SECRET);
+  
+
    axios
     .post(
       "https://www.reddit.com/api/v1/access_token",
-      `grant_type=authorization_code&code=${code}&redirect_uri=http://localhost:4000/auth`,
+      `grant_type=authorization_code&code=${code}&redirect_uri=${process.env.REDIRECT}/auth`,
       {
         auth: {
           username: process.env.CLIENT_ID,
-          password: process.env.CLIENT_SECRET || 'f-BI71U6PRv23Jhw92AZ887OtSZI7Q',
+          password: process.env.SECRET,
         },
-        headers: { "Content-type": "application/x-www-form-urlencoded" },
+        headers: { "Content-type": "application/x-www-form-urlencoded"},
       }
     )
     .then(({ data }) => {
