@@ -50,7 +50,7 @@ export const saveTokenAsync = ():tokenRequestAsync => (dispatch) => {
    axios
     .post(
       "https://www.reddit.com/api/v1/access_token",
-      `grant_type=authorization_code&code=${code}&redirect_uri=${process.env.REDIRECT}/auth`,
+      `grant_type=authorization_code&code=${code}&redirect_uri=${process.env.REDIRECT}`,
       {
         auth: {
           username: process.env.CLIENT_ID,

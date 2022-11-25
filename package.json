@@ -9,9 +9,9 @@
   "scripts": {
     "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
     "build": "env NODE_ENV=production webpack --config webpack.config.js",
-    "dev": "env NODE_ENV=development CLIENT_ID=wwwocbaKhzrEWKGLTAG0rw SECRET=f-BI71U6PRv23Jhw92AZ887OtSZI7Q REDIRECT=http://localhost:4000 node ./bin/dev.js",
+    "dev": "env NODE_ENV=development CLIENT_ID=wwwocbaKhzrEWKGLTAG0rw SECRET=f-BI71U6PRv23Jhw92AZ887OtSZI7Q REDIRECT=http://localhost:4000/auth node ./bin/dev.js",
     "test": "jest",
-    "start": "env CLIENT_ID=tCZreYTfxrt8yIRuILxAXA SECRET=se-X4FxxuSNd5yxSc678O-PJ2ZuobQ REDIRECT=https://reddit-react.herokuapp.com node ./dist/server/server.js"
+    "start": "env CLIENT_ID=tCZreYTfxrt8yIRuILxAXA SECRET=se-X4FxxuSNd5yxSc678O-PJ2ZuobQ REDIRECT=https://reddit-react.herokuapp.com/auth node ./dist/server/server.js"
   },
   "keywords": [],
   "author": "",
