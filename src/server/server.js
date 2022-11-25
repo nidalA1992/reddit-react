@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/server";
 import { App } from "../App";
 import { indexTemplate } from "./indexTemplate";
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 

@@ -5,9 +5,6 @@ import IIconsProps from '../icons/IIconsProps';
 
 export function Icon(props: IIconsProps) {
   const {size = 14, name} = props;
-
-  console.log(Icons);
-  
   
   return (
     <>{Icons[name || EIcon.anon]({size})}</>

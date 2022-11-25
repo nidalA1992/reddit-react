@@ -4,7 +4,7 @@ import { hot } from 'react-hot-loader/root';
 import { useRequestToken } from './hooks/useRequestToken';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MainPage from './shared/pages/MainPage';
 import NotFoundPage from './shared/pages/NotFoundPage';
 
