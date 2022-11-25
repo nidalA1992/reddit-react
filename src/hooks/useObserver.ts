@@ -8,7 +8,6 @@ export const useObserver = (callback: () => void, deps: any[]) => {
 
       if(ref.current && isIntersecting && deps.every(dep => dep)) {
         callback();
-        console.log('observe');
       } 
 
     }, {
