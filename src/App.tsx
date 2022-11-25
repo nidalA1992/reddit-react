@@ -10,6 +10,9 @@ import NotFoundPage from './shared/pages/NotFoundPage';
 
 function AppComponent() {
 
+  console.log(process.env.CLIENT_ID, process.env.REDIRECT, process.env.SECRET);
+  
+
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
