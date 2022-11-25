@@ -17,9 +17,7 @@ if (IS_DEV) {
   app.use(
     helmet({
       contentSecurityPolicy: false,
-      crossOriginResourcePolicy: {
-        policy: "same-site",
-      },
+      crossOriginEmbedderPolicy: false,
     })
   );
 }
