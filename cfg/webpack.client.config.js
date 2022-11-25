@@ -23,6 +23,17 @@ function setupDevTool() {
   if (IS_PROD) return false;
 }
 
+function getEntries() {
+  if (IS_PROD) {
+    return [path.resolve(__dirname, "../src/client/index.tsx")];
+  }
+
+  return [
+    path.resolve(__dirname, "../src/client/index.tsx"),
+    "webpack-hot-middleware/client?path=http://localhost:4001/static/__webpack_hmr",
+  ];
+}
+
 module.exports = {
   resolve: {
     // разрешить следующие разрешения
@@ -32,10 +43,7 @@ module.exports = {
     },
   },
   mode: NODE_ENV ? NODE_ENV : "development", // переключение dev/prod билда
-  entry: [
-    path.resolve(__dirname, "../src/client/index.tsx"),
-    "webpack-hot-middleware/client?path=http://localhost:4001/static/__webpack_hmr",
-  ],
+  entry: getEntries(),
   output: {
     path: path.resolve(__dirname, "../dist/client"),
     filename: "client.js",
