@@ -1,18 +1,18 @@
-import React, { useContext } from 'react';
-import styles from './searchBlock.css';
-import { UserBlock } from '../../UserBlock';
-import { useUserData } from '../../../hooks/useUserData';
+import React, { useContext } from "react";
+import styles from "./searchBlock.css";
+import { UserBlock } from "../../UserBlock";
+import { useTypedSelector } from "../../../hooks/useTypedSelector";
 
 export function SearchBlock() {
-  const {name, iconImg, loading} = useUserData();
+  const { data, isLoading } = useTypedSelector((state) => state.meReducer);
 
   return (
     <div className={styles.searchBlock}>
-      <UserBlock 
-        userName={name} 
-        avatarSrc={iconImg}
-        loading={loading}
-      /> 
+      <UserBlock
+        userName={data.name}
+        avatarSrc={data.iconImg}
+        loading={isLoading}
+      />
     </div>
   );
 }

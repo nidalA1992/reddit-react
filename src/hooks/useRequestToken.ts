@@ -1,13 +1,10 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { saveTokenAsync } from "../store/token/actions";
+import { useActions } from "./useActions";
 
 export function useRequestToken() {
-  const dispatch = useDispatch();
+  const { tokenRequest } = useActions();
 
   useEffect(() => {
-
-    dispatch(saveTokenAsync());
-    
-  },[]);
+    tokenRequest();
+  }, []);
 }

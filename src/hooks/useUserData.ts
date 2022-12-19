@@ -1,26 +1,15 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { meRequestAsync } from "../store/me/actions";
-import { 
-  loadingDataSelector, 
-  tokenSelector, 
-  userDataSelector 
-} from "../store/reducer";
+import { useActions } from "./useActions";
+import { useTypedSelector } from "./useTypedSelector";
 
 export function useUserData() {
-  const { name, iconImg } = userDataSelector();
-  const loading = loadingDataSelector();
-  const token = tokenSelector();
-  const dispatch = useDispatch();
+  const token = useTypedSelector((state) => state.tokenReducer.data);
+
+  const { meRequest } = useActions();
 
   useEffect(() => {
-    
     if (token) {
-      dispatch(meRequestAsync());
+      meRequest();
     }
-
   }, [token]);
-
-  return {name, iconImg, loading}
 }
-

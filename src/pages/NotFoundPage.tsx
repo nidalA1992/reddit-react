@@ -1,13 +1,13 @@
 import React from "react";
-import { Layout } from "../Layout";
-import NotFound from "../NotFound/NotFound";
+import { Layout } from "../shared/Layout";
+import NotFound from "../shared/NotFound/NotFound";
 
 const NotFoundPage = () => {
-  return  (
+  return (
     <Layout>
       <NotFound />
     </Layout>
   );
-}
- 
+};
+
 export default NotFoundPage;
