@@ -1,9 +1,11 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const { DefinePlugin } = require("webpack");
+const Dotenv = require("dotenv-webpack");
 
 const NODE_ENV = process.env.NODE_ENV; // переменная окружения Node.js
 const GLOABAL_CSS_REGEXP = /\.global\.css$/;
+const IS_DEV = NODE_ENV === "development";
 
 module.exports = {
   target: "node",
@@ -50,9 +52,16 @@ module.exports = {
   },
   plugins: [
     new DefinePlugin({
-      "process.env.CLIENT_ID": `'${process.env.CLIENT_ID}'`,
-      "process.env.SECRET": `'${process.env.SECRET}'`,
-      "process.env.REDIRECT": `'${process.env.REDIRECT}'`,
+      "process.env.CLIENT_ID": `'${
+        IS_DEV ? process.env.CLIENT_ID_DEV : process.env.CLIENT_ID
+      }'`,
+      "process.env.SECRET": `'${
+        IS_DEV ? process.env.SECRET_DEV : process.env.SECRET
+      }'`,
+      "process.env.REDIRECT": `'${
+        IS_DEV ? process.env.REDIRECT_DEV : process.env.REDIRECT
+      }'`,
     }),
+    new Dotenv(),
   ],
 };

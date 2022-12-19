@@ -13,9 +13,18 @@ interface IUserBlockProps {
 export function UserBlock(props: Partial<IUserBlockProps>) {
   const { avatarSrc, userName, loading } = props;
 
+  const clientId =
+    process.env.NODE_ENV === "development"
+      ? process.env.CLIENT_ID_DEV
+      : process.env.CLIENT_ID;
+  const redirect =
+    process.env.NODE_ENV === "development"
+      ? process.env.REDIRECT_DEV
+      : process.env.REDIRECT;
+
   return (
     <a
-      href={`https://www.reddit.com/api/v1/authorize?client_id=${process.env.CLIENT_ID}&response_type=code&state=random_string&redirect_uri=${process.env.REDIRECT}&duration=permanent&scope=identity read submit`}
+      href={`https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=random_string&redirect_uri=${redirect}&duration=permanent&scope=identity read submit`}
       className={styles.userBox}
     >
       <div className={styles.avatarBox}>

@@ -1,6 +1,7 @@
 const path = require("path");
 const { HotModuleReplacementPlugin, DefinePlugin } = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 const NODE_ENV = process.env.NODE_ENV; // переменная окружения Node.js
 const IS_DEV = NODE_ENV === "development";
@@ -11,10 +12,17 @@ const DEV_PLUGINS = [
   new HotModuleReplacementPlugin(),
 ];
 const COMMON_PLUGINS = [
+  new Dotenv(),
   new DefinePlugin({
-    "process.env.CLIENT_ID": `'${process.env.CLIENT_ID}'`,
-    "process.env.SECRET": `'${process.env.SECRET}'`,
-    "process.env.REDIRECT": `'${process.env.REDIRECT}'`,
+    "process.env.CLIENT_ID": `'${
+      IS_DEV ? process.env.CLIENT_ID_DEV : process.env.CLIENT_ID
+    }'`,
+    "process.env.SECRET": `'${
+      IS_DEV ? process.env.SECRET_DEV : process.env.SECRET
+    }'`,
+    "process.env.REDIRECT": `'${
+      IS_DEV ? process.env.REDIRECT_DEV : process.env.REDIRECT
+    }'`,
   }),
 ];
 

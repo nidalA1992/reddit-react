@@ -25,14 +25,27 @@ export const TokenActionsCreator = {
 
     if (!code) return;
 
+    const redirect =
+      process.env.NODE_ENV === "development"
+        ? process.env.REDIRECT_DEV
+        : process.env.REDIRECT;
+    const clientId =
+      process.env.NODE_ENV === "development"
+        ? process.env.CLIENT_ID_DEV
+        : process.env.CLIENT_ID;
+    const secret =
+      process.env.NODE_ENV === "development"
+        ? process.env.SECRET_DEV
+        : process.env.SECRET;
+
     try {
       const { data } = await axios.post(
         "https://www.reddit.com/api/v1/access_token",
-        `grant_type=authorization_code&code=${code}&redirect_uri=${process.env.REDIRECT}`,
+        `grant_type=authorization_code&code=${code}&redirect_uri=${redirect}`,
         {
           auth: {
-            username: process.env.CLIENT_ID || "",
-            password: process.env.SECRET || "",
+            username: clientId || "",
+            password: secret || "",
           },
           headers: { "Content-type": "application/x-www-form-urlencoded" },
         }
